@@ -24,7 +24,7 @@ public class GWindow extends JPanel implements ActionListener
     private Rectangle gameRectangle; //this is the 800 by 600 window to be used for consistent graphics
     private Rectangle displayRectangle; //this is the rectangle used to show what will be drawn on screen
 
-    private double ratio;
+    public double ratio;
 
     public GWindow()
     {
@@ -80,8 +80,23 @@ public class GWindow extends JPanel implements ActionListener
     {
         Graphics2D graphics2D = (Graphics2D) graphics;
 
-        graphics2D.draw(displayRectangle); //just a test to see what is good
+        graphics2D.setColor(Color.BLACK);
+        graphics2D.fillRect(0, 0, getWidth(), getHeight());
+        graphics2D.setColor(Color.WHITE);
+        graphics2D.fill(displayRectangle);
+
+        graphics2D.setColor(Color.GREEN);
+        Box box = new Box(100, 100);
+        box.draw(graphics2D, this);
     }
 
+    public Rectangle getGameRectangle()
+    {
+        return gameRectangle;
+    }
 
+    public Rectangle getDisplayRectangle()
+    {
+        return displayRectangle;
+    }
 }
