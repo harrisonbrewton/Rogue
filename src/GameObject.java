@@ -13,4 +13,6 @@ public interface GameObject
     public String toString(); //obvious
 
     public Rectangle getBoundingRectangle(); //to be used with collison
+
+    public void update(boolean [] input);
 }

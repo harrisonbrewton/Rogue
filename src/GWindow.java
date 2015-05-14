@@ -2,6 +2,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.io.File;
+import java.util.ArrayList;
 
 /**
  * Created by harrison_brewton on 5/14/15.
@@ -9,7 +13,7 @@ import java.awt.event.ActionListener;
  * The main GWindow used for creating a scalable screen, good smileness
  * keep this as clean as possible
  */
-public class GWindow extends JPanel implements ActionListener
+public class GWindow extends JPanel implements ActionListener, KeyListener
 {
     public static void main(String[] args)
     {
@@ -24,20 +28,37 @@ public class GWindow extends JPanel implements ActionListener
     private Rectangle gameRectangle; //this is the 800 by 600 window to be used for consistent graphics
     private Rectangle displayRectangle; //this is the rectangle used to show what will be drawn on screen
 
+    private ArrayList<GameObject> objects = new ArrayList<GameObject>();
+
     public double ratio;
+    
+    private boolean[] input = new boolean[4];
 
     public GWindow()
     {
         //sets the perefred size of shape
         setPreferredSize(java.awt.Toolkit.getDefaultToolkit().getScreenSize());
 
+        addKeyListener(this);
+        setFocusable(true);
+
         //iniates our two beloved rectangles
         gameRectangle = new Rectangle(0, 0, 800, 600);
         displayRectangle = new Rectangle();
 
+
+        Map map = new Map(new File("Test.map"), this);
+
+        for(GameObject object : map.gameObjects)
+        {
+            objects.add(object);
+        }
+
+
         //a rad timer
         Timer timer = new Timer(33, this);
         timer.start();
+
 
         ratio = 0;
     }
@@ -47,6 +68,10 @@ public class GWindow extends JPanel implements ActionListener
     public void actionPerformed(ActionEvent actionEvent)
     {
         updateDisplayRectangle();
+        for (GameObject object : objects)
+        {
+            object.update(input);
+        }
         repaint();
     }
 
@@ -86,8 +111,12 @@ public class GWindow extends JPanel implements ActionListener
         graphics2D.fill(displayRectangle);
 
         graphics2D.setColor(Color.GREEN);
-        Box box = new Box(100, 100);
-        box.draw(graphics2D, this);
+
+        for (GameObject object : objects)
+        {
+            if(object.getBoundingRectangle().intersects(gameRectangle))
+                object.draw(graphics2D, this);
+        }
     }
 
     public Rectangle getGameRectangle()
@@ -98,5 +127,48 @@ public class GWindow extends JPanel implements ActionListener
     public Rectangle getDisplayRectangle()
     {
         return displayRectangle;
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e)
+    {
+        
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e)
+    {
+        switch (e.getKeyCode())
+        {
+            case KeyEvent.VK_W: input[0] = true;
+                break;
+            case KeyEvent.VK_A: input[1] = true;
+                break;
+            case KeyEvent.VK_S: input[2] = true;
+                break;
+            case KeyEvent.VK_D: input[3] = true;
+                break;
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e)
+    {
+        switch (e.getKeyCode())
+        {
+            case KeyEvent.VK_W: input[0] = false;
+                break;
+            case KeyEvent.VK_A: input[1] = false;
+                break;
+            case KeyEvent.VK_S: input[2] = false;
+                break;
+            case KeyEvent.VK_D: input[3] = false;
+                break;
+        }
+    }
+
+    public ArrayList<GameObject> getObjects()
+    {
+        return objects;
     }
 }
