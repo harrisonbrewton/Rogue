@@ -24,6 +24,8 @@ public class GWindow extends JPanel implements ActionListener
     private Rectangle gameRectangle; //this is the 800 by 600 window to be used for consistent graphics
     private Rectangle displayRectangle; //this is the rectangle used to show what will be drawn on screen
 
+    private double ratio;
+
     public GWindow()
     {
         //sets the perefred size of shape
@@ -37,6 +39,7 @@ public class GWindow extends JPanel implements ActionListener
         Timer timer = new Timer(33, this);
         timer.start();
 
+        ratio =0;
     }
 
 
@@ -50,31 +53,27 @@ public class GWindow extends JPanel implements ActionListener
     private void updateDisplayRectangle()
     {
         //find the ratio of the 800 by 600 game rectangle compared to screen given
-        double ratioX = gameRectangle.getWidth()/getWidth();
-        double ratioY = gameRectangle.getHeight()/getHeight();
+        double ratioX = getWidth()/gameRectangle.getWidth();
+        double ratioY = getHeight()/gameRectangle.getHeight();
 
-        //if the proportions work just make full sized
-        if(ratioX == ratioY)
-        {
-            gameRectangle.setLocation(0, 0);
-            gameRectangle.width = getWidth();
-            gameRectangle.width = getHeight();
-        }
-        //otherwise fit the limiting reagent (oh chemistry jokes)
-        else if(ratioY > ratioX)
+        //other wise tries to fit the ratios as bust as possible based on the limiting reagent
+        if(ratioX > ratioY)
         {
             displayRectangle.height = getHeight();
             displayRectangle.y = 0;
-            displayRectangle.width = (int) (4.0*getHeight()/3);
+            displayRectangle.width = ((int) (4.0 * displayRectangle.height / 3));
             displayRectangle.x = (getWidth()-displayRectangle.width)/2;
+            ratio = ratioY;
         }
-        else
+        if(ratioY >= ratioX)
         {
             displayRectangle.width = getWidth();
             displayRectangle.x = 0;
-            displayRectangle.height = (int) (3.0*getWidth()/4);
+            displayRectangle.height = ((int) (3.0 * displayRectangle.width / 4));
             displayRectangle.y = (getHeight()-displayRectangle.height)/2;
+            ratio = ratioX;
         }
+
     }
 
     public void paint (Graphics graphics)
