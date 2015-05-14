@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e1b62edb-ce95-4fcd-bbc1-0672907366a7" name="Default" comment="Created simple box class, and game object interface">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Box.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GameObject.java" />
+    <list default="true" id="e1b62edb-ce95-4fcd-bbc1-0672907366a7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Rogue/GWindow.class" afterPath="$PROJECT_DIR$/out/production/Rogue/GWindow.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GWindow.java" afterPath="$PROJECT_DIR$/src/GWindow.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Rogue.iws" />
@@ -381,7 +378,13 @@
       <option name="project" value="LOCAL" />
       <updated>1431633970594</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Created simple box class, and game object interface">
+      <created>1431635213275</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1431635213275</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
