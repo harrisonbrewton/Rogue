@@ -39,7 +39,7 @@ public class GWindow extends JPanel implements ActionListener
         Timer timer = new Timer(33, this);
         timer.start();
 
-        ratio =0;
+        ratio = 0;
     }
 
 
