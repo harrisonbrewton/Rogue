@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1b62edb-ce95-4fcd-bbc1-0672907366a7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Rogue/GWindow.class" afterPath="$PROJECT_DIR$/out/production/Rogue/GWindow.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GWindow.java" afterPath="$PROJECT_DIR$/src/GWindow.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Rogue.iws" />
@@ -32,8 +30,8 @@
       <file leaf-file-name="GWindow.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5620438" vertical-offset="564" max-vertical-offset="1050">
-              <caret line="53" column="4" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.05109489" vertical-offset="564" max-vertical-offset="1050">
+              <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#updateDisplayRectangle#0;class#GWindow#0" expanded="false" />
@@ -162,6 +160,11 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
@@ -317,7 +320,13 @@
       <option name="project" value="LOCAL" />
       <updated>1431632704393</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Set up a scaling game rectangle, fixed">
+      <created>1431633877839</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1431633877839</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -367,7 +376,8 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="Set up a scaling game rectangle" />
-    <option name="LAST_COMMIT_MESSAGE" value="Set up a scaling game rectangle" />
+    <MESSAGE value="Set up a scaling game rectangle, fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set up a scaling game rectangle, fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -456,8 +466,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5620438" vertical-offset="564" max-vertical-offset="1050">
-          <caret line="53" column="4" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.05109489" vertical-offset="564" max-vertical-offset="1050">
+          <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#updateDisplayRectangle#0;class#GWindow#0" expanded="false" />
